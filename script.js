@@ -19,7 +19,7 @@ function divide(a, b) {
     return a / b;
 }
 
-function operate(num1, opr, num2) {
+function operate(a, opr, b) {
     switch(opr) {
         case '+':
             return add(a, b);
