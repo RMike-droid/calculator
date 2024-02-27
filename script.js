@@ -1,23 +1,11 @@
-let numberOne = 0;
-let numberTwo = 0;
-let operator = undefined;
+let numberOne = "";
+let numberTwo = "";
+let operator;
 
-
-function add(a, b) {
-    return a + b;
-}
-
-function subtract(a, b) {
-    return a - b;
-}
-
-function multiply(a, b) {
-    return a * b;
-}
-
-function divide(a, b) {
-    return a / b;
-}
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => b === 0 ? "For real??" : a / b;
 
 function operate(a, opr, b) {
     switch(opr) {
@@ -33,5 +21,7 @@ function operate(a, opr, b) {
         case '/':
             return divide(a, b);
             break;
+        default:
+            return null;
     }
 }
