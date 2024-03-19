@@ -1,27 +1,23 @@
-let numberOne = "";
-let numberTwo = "";
-let operator;
+let operator = '';
+let previousValue = '';
+let currentValue = '';
 
-const add = (a, b) => a + b;
-const subtract = (a, b) => a - b;
-const multiply = (a, b) => a * b;
-const divide = (a, b) => b === 0 ? "For real??" : a / b;
+document.addEventListener("DOMContentLoaded", function() {
+    let clear = document.querySelector("#clear");
+    let equals = document.querySelector("#equals");
+    let decimal = document.querySelector("#decimal");
 
-function operate(a, opr, b) {
-    switch(opr) {
-        case '+':
-            return add(a, b);
-            break;
-        case '-':
-            return subtract(a, b);
-            break;
-        case '*':
-            return multiply(a, b);
-            break;
-        case '/':
-            return divide(a, b);
-            break;
-        default:
-            return null;
-    }
+    let numbers = document.querySelectorAll(".number");
+    let operator = document.querySelectorAll(".operator");
+
+    let previousScreen = document.querySelector(".previous");
+    let currentScreen = document.querySelector(".current");
+
+    numbers.forEach((number) => number.addEventListener("click", function(e) {
+        handleNumber(e.target.textContent)
+    }))
+});
+
+function handleNumber(num) {
+    currentValue += num;
 }
